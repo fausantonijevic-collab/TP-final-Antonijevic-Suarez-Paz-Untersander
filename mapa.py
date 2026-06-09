@@ -3,8 +3,7 @@ caracteres_validos = {"X", "o", ".", " ", "G", "T", "-", "P"}
 ancho_mapa = 28
 alto_mapa = 31
 
-tile_size = 20
-
+from setting import tile_size
 
 class Mapa:
     def __init__(self, ruta):
