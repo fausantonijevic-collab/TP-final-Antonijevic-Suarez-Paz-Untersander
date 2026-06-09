@@ -1,16 +1,11 @@
 import pygame
 from mapa import Mapa, ancho_mapa, alto_mapa, tile_size
+from setting import tile_size, map_col, map_filas
+from setting import color_fondo, color_pared, color_dot, color_power_pellet
+from setting import color_pacman, color_ghost_house, color_puerta, color_tunel
+from setting import color_infojuego, vidas_iniciales, fps
+from setting import color_texto
 
-
-color_fondo = (0, 0, 0)
-color_pared = (0, 0, 255)
-color_punto = (255, 255, 255)
-color_power_pellet = (255, 255, 255)
-color_pacman = (255, 255, 0)
-color_ghost_house = (80, 80, 80)
-color_puerta = (255, 150, 255)
-color_tunel = (30, 30, 30)
-color_texto = (255, 255, 255)
 
 margen_superior = 70
 margen_inferior = 60
@@ -56,7 +51,7 @@ def dibujar_mapa(pantalla, mapa):
                 pygame.draw.rect(pantalla, color_pared, (x, y, tile_size, tile_size))
 
             elif caracter == ".":
-                pygame.draw.circle(pantalla, color_punto,(x + tile_size // 2, y + tile_size // 2),3)
+                pygame.draw.circle(pantalla, color_dot,(x + tile_size // 2, y + tile_size // 2),3)
 
             elif caracter == "o":
                 pygame.draw.circle(pantalla, color_power_pellet, (x + tile_size // 2, y + tile_size // 2),7)
