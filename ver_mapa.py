@@ -69,35 +69,36 @@ def dibujar_mapa(pantalla, mapa):
                 pygame.draw.rect(pantalla,color_tunel,(x, y, tile_size, tile_size))
 
 
-pygame.init()
+if __name__ == "__main__":
+    pygame.init()
 
-mapa = Mapa("mapa.txt")
+    mapa = Mapa("mapa.txt")
 
-ancho_ventana = ancho_mapa * tile_size
-alto_ventana = alto_mapa * tile_size + margen_superior + margen_inferior
+    ancho_ventana = ancho_mapa * tile_size
+    alto_ventana = alto_mapa * tile_size + margen_superior + margen_inferior
 
-pantalla = pygame.display.set_mode((ancho_ventana, alto_ventana))
-pygame.display.set_caption("Mapa Pac-Man")
+    pantalla = pygame.display.set_mode((ancho_ventana, alto_ventana))
+    pygame.display.set_caption("Mapa Pac-Man")
 
-fuente = pygame.font.SysFont("arial", 24, True)
-reloj = pygame.time.Clock()
+    fuente = pygame.font.SysFont("arial", 24, True)
+    reloj = pygame.time.Clock()
 
-ventana_abierta = True
+    ventana_abierta = True
 
-while ventana_abierta:
-    eventos = pygame.event.get()
+    while ventana_abierta:
+        eventos = pygame.event.get()
 
-    for evento in eventos:
-        if evento.type == pygame.QUIT:
-            ventana_abierta = False
+        for evento in eventos:
+            if evento.type == pygame.QUIT:
+                ventana_abierta = False
 
-    pantalla.fill(color_fondo)
+        pantalla.fill(color_fondo)
 
-    dibujar_texto(pantalla, fuente)
-    dibujar_mapa(pantalla, mapa)
-    dibujar_vidas(pantalla)
+        dibujar_texto(pantalla, fuente)
+        dibujar_mapa(pantalla, mapa)
+        dibujar_vidas(pantalla)
 
     pygame.display.flip()
     reloj.tick(fps)
 
-pygame.quit()
+    pygame.quit()
