@@ -98,7 +98,7 @@ if __name__ == "__main__":
         dibujar_mapa(pantalla, mapa)
         dibujar_vidas(pantalla)
 
-    pygame.display.flip()
-    reloj.tick(fps)
+        pygame.display.flip()
+        reloj.tick(fps)
 
     pygame.quit()
