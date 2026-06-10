@@ -1,18 +1,21 @@
+
 import pygame
-from mapa import Mapa, ancho_mapa, alto_mapa, tile_size
+from mapa import Mapa
 from setting import tile_size, map_col, map_filas
 from setting import color_fondo, color_pared, color_dot, color_power_pellet
 from setting import color_pacman, color_ghost_house, color_puerta, color_tunel
 from setting import color_infojuego, vidas_iniciales, fps
-from setting import color_texto
 
+ancho_mapa = map_col
+alto_mapa = map_filas
+color_texto = color_infojuego
+vidas = vidas_iniciales
 
 margen_superior = 70
 margen_inferior = 60
 
 score = 0
 high_score = 0
-vidas = 3
 
 
 def dibujar_texto(pantalla, fuente):
@@ -56,11 +59,6 @@ def dibujar_mapa(pantalla, mapa):
             elif caracter == "o":
                 pygame.draw.circle(pantalla, color_power_pellet, (x + tile_size // 2, y + tile_size // 2),7)
 
-                pygame.draw.polygon(pantalla,color_fondo,
-                        [(x + tile_size // 2, y + tile_size // 2),
-                        (x + tile_size, y + 4),
-                        (x + tile_size, y + tile_size - 4)])
-
             elif caracter == "G":
                 pygame.draw.rect(pantalla,color_ghost_house,(x, y, tile_size, tile_size) )
 
@@ -100,6 +98,6 @@ while ventana_abierta:
     dibujar_vidas(pantalla)
 
     pygame.display.flip()
-    reloj.tick(60)
+    reloj.tick(fps)
 
 pygame.quit()
