@@ -126,3 +126,6 @@ class Mapa:
             raise ValueError("Caracter inválido")
 
         self.grilla[fila][col] = caracter
+
+    def obtener_posicion_fantasma(self):
+        return 13, 14

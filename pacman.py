@@ -24,6 +24,7 @@ class pacman:
         self.prox_direccion = "derecha"
 
         self.power_activo = False
+        self.comio_power_pellet = False
         self.tiempo_power = 0.0
 
         self.apertura = 45.0
@@ -118,6 +119,7 @@ class pacman:
         if tile == "o":
             mapa.cambiar_tile(self.col(),self.fila() , " ")
             self.activar_power()
+            self.comio_power_pellet = True
             return 50
         return 0
 
