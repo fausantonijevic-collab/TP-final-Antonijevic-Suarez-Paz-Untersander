@@ -13,3 +13,5 @@ class Blinky(Ghost):
             pacman.col(),
             pacman.fila()
         )
+    
+    j

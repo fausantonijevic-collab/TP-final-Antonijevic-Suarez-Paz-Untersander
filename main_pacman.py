@@ -65,3 +65,4 @@ while ventana_abierta:
     pygame.display.flip()
 
 pygame.quit()
+l

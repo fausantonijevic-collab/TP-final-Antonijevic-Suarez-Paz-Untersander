@@ -9,7 +9,7 @@ direcciones= {"derecha":(1,0) , "izquierda":(-1,0), "arriba":(0,-1),"abajo":(0,1
 angulo_base={"derecha":0 , "izquierda":180, "arriba":90,"abajo":270}
 
 tiles_transitables = {" ",".","o","P","T","-"}
-
+j
 class pacman:
     def __init__(self,mapa):
         col_inicial, fila_inicial = mapa.obtener_posicion_pacman()

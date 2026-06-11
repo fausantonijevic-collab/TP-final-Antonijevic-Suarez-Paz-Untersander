@@ -129,3 +129,5 @@ class Mapa:
 
     def obtener_posicion_fantasma(self):
         return 13, 14
+    
+    

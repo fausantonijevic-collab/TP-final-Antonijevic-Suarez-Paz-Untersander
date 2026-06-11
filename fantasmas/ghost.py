@@ -341,3 +341,4 @@ class Ghost:
         )
 
         print("DIBUJAR:", self.estado)
+j
